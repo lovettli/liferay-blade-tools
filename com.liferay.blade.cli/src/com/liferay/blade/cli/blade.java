@@ -96,6 +96,11 @@ public class blade extends AbstractConsoleApp implements Runnable {
 		error("Could not locate version");
 	}
 
+	@Description("Connects to Liferay and get extension service points.")
+	public void _services(ServicesOptions options) throws Exception {
+		new ServicesCommand(this, options).execute();
+	}
+
 	public PrintStream out() {
 		return out;
 	}
