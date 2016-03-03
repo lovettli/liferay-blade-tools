@@ -430,8 +430,8 @@ public class CreateCommandTest {
 
 		String projectPath = "generated/test/workspace/modules";
 
-		checkFileExists(
-			projectPath + "/workspace.sample/build.gradle");
+		lacks(checkFileExists(
+				projectPath + "/workspace.sample/build.gradle"), ".*repositories*\\s\\{.*");
 
 		checkFileExists(
 			projectPath + "/workspace.sample/com.sample.api/build.gradle");
