@@ -91,11 +91,15 @@ public class Util {
 			return null;
 		}
 
-		for (String fileName : fileNames) {
-			File file = new File(dir, fileName);
+		for (int i = 0, j = 0; i < fileNames.length; i++) {
+			File file = new File(dir, fileNames[i]);
 
 			if (file.exists()) {
-				return dir;
+				j++;
+
+				if (j == fileNames.length) {
+					return dir;
+				}
 			}
 		}
 
