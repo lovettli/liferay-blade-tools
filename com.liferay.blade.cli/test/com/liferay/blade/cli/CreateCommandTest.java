@@ -516,7 +516,12 @@ public class CreateCommandTest {
 
 		File settingsFile = new File(workspace, "settings.gradle");
 
+		String properties = "microsoft.translator.client.id=\nmicrosoft.translator.client.secret=";
+
+		File gradleProperties = new File(workspace, "gradle.properties");
+
 		Files.write(settingsFile.toPath(), settings.getBytes());
+		Files.write(gradleProperties.toPath(), properties.getBytes());
 	}
 
 }
